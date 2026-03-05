@@ -112,6 +112,16 @@ function App() {
           onTaskUpdated={handleTaskUpdated}
           onTaskDeleted={handleTaskDeleted}
         />
+
+        <div className="text-center mt-8">
+          <button
+            onClick={() => { throw new Error("Test Sentry React"); }}
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          >
+            Test Sentry
+          </button>
+        </div>
+
       </div>
     </div>
   )
