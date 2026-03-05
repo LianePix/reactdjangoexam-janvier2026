@@ -2,6 +2,12 @@
 
 Application full-stack de gestion de tâches par catégories développée avec React (frontend) et Django REST Framework (backend).
 
+## Demo
+
+- **Frontend (Vercel)** : https://todolist-app-brown-iota.vercel.app
+- **Backend API (Render)** : https://todolist-backend-h54g.onrender.com/api/
+- **Health check** : https://todolist-backend-h54g.onrender.com/health/
+
 ## Installation et Lancement
 
 ### Prérequis
@@ -79,7 +85,7 @@ Le frontend sera accessible sur `http://localhost:5173/`
 - Filtrer les tâches par catégorie
 - Validation des données côté backend et frontend
 - Gestion des erreurs avec messages en français
-- Persistance des données dans SQLite
+- Persistance des données dans PostgreSQL (production) / SQLite (developpement)
 - Interface responsive avec Tailwind CSS
 
 ## Technologies utilisées
@@ -88,10 +94,19 @@ Le frontend sera accessible sur `http://localhost:5173/`
 - Django 4.2.7
 - Django REST Framework 3.14.0
 - django-cors-headers 4.3.0
-- SQLite
+- Gunicorn (serveur WSGI production)
+- WhiteNoise (fichiers statiques)
+- PostgreSQL (production) / SQLite (développement)
+- Sentry (monitoring des erreurs)
 
 **Frontend :**
 - React 18
 - Vite 7
 - Tailwind CSS 3
 - Fetch API
+- Sentry (monitoring des erreurs)
+
+**Déploiement :**
+- Backend : Render
+- Frontend : Vercel
+- Monitoring : UptimeRobot
