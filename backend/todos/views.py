@@ -3,6 +3,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Category, Task
 from .serializers import CategorySerializer, TaskSerializer
+from django.http import JsonResponse
+
 
 @api_view(['GET', 'POST'])
 def category_list(request):
@@ -77,3 +79,7 @@ def task_detail(request, pk):
     elif request.method == 'DELETE':
         task.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})
